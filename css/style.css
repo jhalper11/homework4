@@ -34,6 +34,12 @@ nav a{
 }
 
 /*Your Code Here*/
+*:focus{
+  border: 2px solid;
+}
+nav:hover{
+  text-decoration: underline;
+}
 /*Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
 
@@ -83,6 +89,8 @@ header{
   background-size: cover;       /* Parallax effect */
   color: white;
   height: 400px;                /* Parallax effect */
+  background-image: '../images/header.jpg';
+  background-repeat: no-repeat;
 
   /*Your Code Here*/
   /*Set background-image to header.jpg */
@@ -111,6 +119,8 @@ header p{
 
 .about, .about-image{
    /*Your Code Here*/
+   max-height: 700px;
+
 
 }
 
