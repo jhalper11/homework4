@@ -51,28 +51,22 @@ links in the navigation are in the hover or focus state.*/
   z-index: 1;
   position: absolute;
   top: -40px;
-
-  /*Your code here*/
 }
 .skip a:focus{
   position: absolute;
   top: 0px;
 }
 *:focus{
-  border: 2px solid;
+  border: 2px solid #000000;
 }
 
 /*Your Code Here*/
-/*Write selector/rule property to position the skip class element*/
-
-/*Your Code Here*/
-/*Write selector/rule property to style all elements when in focus*/
-
-
 nav{
   background-color: #ddd;
   padding: 25px 0; 
   text-align: left;
+  grid-column: 1/span 7;
+  grid-row: 1/span 1;
 }
 
 footer{
@@ -80,18 +74,11 @@ footer{
   color: white;
   padding-top: 30px;
   text-align: center;
+  grid-column: 1/-1;
+  grid-row: 7/auto;
 }
 
 
-
-
-.container{
-  display: grid;
-  grid-template-rows: repeat(5, auto);
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-row-gap: 15px;
-
-}
 
 header{
   background-attachment: fixed; /* Parallax effect */     
@@ -101,13 +88,9 @@ header{
   color: white;
   height: 400px;                /* Parallax effect */
   background-image: url('../images/header.jpg');
-
-  /*Your Code Here*/
-  /*Set background-image to header.jpg */
- 
-
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
-  grid-row: 1 / auto;   /*Can you rewrite it?*/
+  background-color: #000000;
+  grid-column: 1 / -1; 
+  grid-row: 1 / auto;  
 }
 
 header p{
@@ -117,41 +100,42 @@ header p{
   text-align: center;
 }
 
+.container{
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-row-gap: 15px;
+}
+
 .about, .method, .clients, .contact{
-  /*Your Code Here*/
   grid-column: 2/span 1;
 
 }
 
 .about-image, .method-image, .clients-image, .contact-image{
-  /*Your Code Here*/
   grid-column: 2/span 1;
+  overflow: hidden;
+  max-height: 700px;
 }
 
 .about, .about-image{
-   /*Your Code Here*/
-   max-height: 700px;
    grid-row: 2/span 1;
-
 
 }
 
 .method, .method-image{
-   /*Your Code Here*/
    grid-row: 3/span 1;
 
 }
 
 
 .clients, .clients-image{
-    /*Your Code Here*/
     grid-row: 4/span 1;
 
 }
 
 
 .contact, .contact-image{
-    /*Your Code Here*/
     grid-row: 5/span 1;
 
 }
@@ -159,20 +143,24 @@ header p{
 .text-block{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
+  align-self: center;
   padding: 30px;
-  /*Your code here:*/
 
 }
 
 
 @media all and (min-width: 800px){
   nav{
+    background-color: #dddddd;
+    align-self: center;
+    text-align: right;
     padding: 30px 0px;
-    /*Your code here:*/
   }
 
   .container{
-    /*Your code here:*/
+    display: grid;
+    grid-template-rows: 400px 400px 400px 400px 400px;
+    grid-template-columns: 50px auto 500px auto 50px;
   }
 
   .about, .clients, .method-image, .contact-image{
@@ -184,22 +172,17 @@ header p{
   }
 }
 
-/*You do not need to modify any code below this line.
-It is included for accessibility to turn off animations
-and movement for people who have modified their 
-preferences to reduce motion.*/
-
 @media screen and (prefers-reduced-motion: reduce){
   html{
-      scroll-behavior: auto; /* Removes scroll animation */
+      scroll-behavior: auto;
   }
 
   .skip a{
-    -webkit-transition: none; /* sets to default setting */
-    transition: none;        /* sets to default setting */
+    -webkit-transition: none;
+    transition: none;        
    }
 
-  /*Turn off parallax*/
+
   header{
     background-attachment: initial;
   }
